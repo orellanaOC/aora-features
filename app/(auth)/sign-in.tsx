@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-export default function TabsLayout() {
+export default function SignIn() {
 	return (
 		<View>
-			<Text>TabsLayout</Text>
+			<Text>SignIn</Text>
 		</View>
 	);
 }
