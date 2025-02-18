@@ -6,9 +6,11 @@ import { View, Text, ScrollView, Dimensions, Alert, Image } from 'react-native';
 import { images } from '@/constants';
 import CustomButton from '@/components/CustomButton';
 import FormField from '@/components/FormField';
-import { createUSer } from '@/lib/appwrite';
+import { createUser, getCurrentUser } from '@/lib/appwrite';
+import { useGlobalContext } from '@/context/GlobalProvider';
 
 const SignUp = () => {
+	const { setUser, setIsLogged } = useGlobalContext();
 	const [isSubmitting, setSubmitting] = useState(false);
 	const [form, setForm] = useState({
 		userName: '',
@@ -17,9 +19,24 @@ const SignUp = () => {
 	});
 
 	const submit = async () => {
+		if (form.userName === '' || form.password === '' || form.email === '') {
+			Alert.alert('Error', 'Please fill in all fields');
+		}
 
+		setSubmitting(true);
 
-		createUSer();
+		try {
+			const result = await createUser(form.email, form.password, form.userName);
+			// const result = await getCurrentUser();
+			setUser(result);
+			setIsLogged(true);
+
+			router.replace('/home');
+		} catch (error: any | unknown) {
+			Alert.alert('Error', error.message);
+		} finally {
+			setSubmitting(false);
+		}
 	};
 
 	return (
