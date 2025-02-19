@@ -48,7 +48,15 @@ const RootLAyout = () => {
 				/>
 				<Stack.Screen
 					name="search/[query]"
-					options={{ headerShown: false }}
+					options={{
+						headerShown: true,
+						headerTitle: 'Search Results',
+						headerTintColor: '#FFFFFF',
+						headerStyle: {
+							backgroundColor: '#161622',
+						},
+						headerBackButtonDisplayMode: 'minimal',
+					}}
 				/>
 			</Stack>
 		</GlobalProvider>
@@ -56,5 +64,3 @@ const RootLAyout = () => {
 };
 
 export default RootLAyout;
-
-const styles = StyleSheet.create({});

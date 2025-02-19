@@ -140,3 +140,15 @@ export async function getLatestPosts(): Promise<VideoData[]> {
 		throw new Error(error);
 	}
 }
+
+// Search video Posts
+export async function searchPosts(query: string): Promise<VideoData[]> {
+	try {
+		const posts = await databases.listDocuments(databaseId, videoCollectionId, [
+			Query.search('title', query),
+		]);
+		return posts.documents as unknown as VideoData[];
+	} catch (error: any) {
+		throw new Error(error);
+	}
+}
