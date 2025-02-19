@@ -17,18 +17,32 @@ export const config = {
 	storageId: '67b3db0900368eb4d754',
 };
 
+const {
+	endpoint,
+	platform,
+	projectId,
+	databaseId,
+	userCollectionId,
+	videoCollectionId,
+} = config;
+
 // Init React Native SDK
 const client = new Client();
 
-client
-	.setEndpoint(config.endpoint)
-	.setProject(config.projectId)
-	.setPlatform(config.platform);
+client.setEndpoint(endpoint).setProject(projectId).setPlatform(platform);
 
 const account = new Account(client);
 const avatars = new Avatars(client);
 const databases = new Databases(client);
 
+export interface VideoData {
+	id: string;
+	title: string;
+	thumbnail: string;
+	prompt: string;
+	video: string;
+	users: User;
+}
 export interface User {
 	username: string;
 	email: string;
@@ -57,8 +71,8 @@ export const createUser = async (
 		await signIn(email, password);
 
 		const newUser = await databases.createDocument(
-			config.databaseId,
-			config.userCollectionId,
+			databaseId,
+			userCollectionId,
 			ID.unique(),
 			{
 				accountId: newAccount.$id,
@@ -89,8 +103,8 @@ export const getCurrentUser = async () => {
 		if (!currentAccount) throw Error;
 
 		const currentUser = await databases.listDocuments(
-			config.databaseId,
-			config.userCollectionId,
+			databaseId,
+			userCollectionId,
 			[Query.equal('accountId', currentAccount.$id)]
 		);
 
@@ -101,3 +115,28 @@ export const getCurrentUser = async () => {
 		throw new Error(error);
 	}
 };
+
+// Get all video Posts
+export async function getAllPosts(): Promise<VideoData[]> {
+	try {
+		const posts = await databases.listDocuments(databaseId, videoCollectionId);
+		// console.log({ docs: posts.documents });
+		return posts.documents as unknown as VideoData[];
+	} catch (error: any) {
+		throw new Error(error);
+	}
+}
+
+// Get latest video Posts
+export async function getLatestPosts(): Promise<VideoData[]> {
+	try {
+		const posts = await databases.listDocuments(databaseId, videoCollectionId, [
+			Query.orderDesc('$createdAt'),
+			Query.limit(4),
+		]);
+		// console.log({ docs: posts.documents });
+		return posts.documents as unknown as VideoData[];
+	} catch (error: any) {
+		throw new Error(error);
+	}
+}
