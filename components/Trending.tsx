@@ -44,15 +44,15 @@ const TrendingItem = ({
 }) => {
 	const [play, setPlay] = useState(false);
 	const [error, setError] = useState<string | null>(null);
-	console.log({ activeItemvideo: item.video });
+	// console.log({ activeItemvideo: item.video });
 
 	const player = useVideoPlayer(item.video, (player) => {
 		player.loop = true;
 	});
 	useEffect(() => {
-		console.log({ status: player.status });
+		// console.log({ status: player.status });
 		if (player.status === 'readyToPlay' && play) {
-			console.log('Reproduce el video cuando esté listo');
+			// console.log('Reproduce el video cuando esté listo');
 			player.play(); // Reproduce el video cuando esté listo
 		} else if (player.status === 'error') {
 			setError('Error al reproducir el video.');
@@ -66,9 +66,9 @@ const TrendingItem = ({
 	const { isPlaying } = useEvent(player, 'playingChange', {
 		isPlaying: player.playing,
 	});
-	console.log({ isPlaying });
+	// console.log({ isPlaying });
 
-	console.log({ activeItem: activeItem.$id, item: item.$id });
+	// console.log({ activeItem: activeItem.$id, item: item.$id });
 	return (
 		<Animatable.View
 			className="mr-1"
@@ -118,7 +118,7 @@ const Trending = ({ posts }: { posts: VideoData[] }) => {
 		viewableItems: ViewToken[];
 	}) => {
 		if (viewableItems.length > 0) {
-			console.log({ videoselected: viewableItems[0].item });
+			// console.log({ videoselected: viewableItems[0].item });
 			setActiveItem(viewableItems[0].item);
 		}
 	};

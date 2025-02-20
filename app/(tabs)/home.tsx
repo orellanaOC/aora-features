@@ -17,8 +17,10 @@ import EmptyState from '@/components/EmptyState';
 import { getAllPosts, getLatestPosts, VideoData } from '@/lib/appwrite';
 import useAppwrite from '@/lib/useAppwrite';
 import VideoCard from '@/components/VideoCard';
+import { useGlobalContext } from '@/context/GlobalProvider';
 
 export default function Home() {
+	const { user, setUser, setIsLogged } = useGlobalContext();
 	const { data: posts, refetch } = useAppwrite(getAllPosts);
 	const { data: latestPosts } = useAppwrite(getLatestPosts);
 
@@ -29,8 +31,6 @@ export default function Home() {
 		await refetch();
 		setRefreshing(false);
 	};
-
-	// console.log({ posts });
 
 	return (
 		<SafeAreaView className="bg-primary h-full">
@@ -51,10 +51,10 @@ export default function Home() {
 						<View className="flex justify-between items-start flex-row mb-6">
 							<View>
 								<Text className="font-medium text-sm text-gray-100">
-									Welcome Back
+									Welcome Back,
 								</Text>
 								<Text className="text-2xl font-semibold text-white">
-									JSMastery
+									{user?.username}
 								</Text>
 							</View>
 

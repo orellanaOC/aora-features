@@ -21,15 +21,15 @@ const VideoCard = ({
 }) => {
 	const [play, setPlay] = useState(false);
 	const [error, setError] = useState<string | null>(null);
-	console.log({ activeItemvideo: video });
+	// console.log({ activeItemvideo: video });
 
 	const player = useVideoPlayer(video, (player) => {
 		player.loop = true;
 	});
 	useEffect(() => {
-		console.log({ status: player.status });
+		// console.log({ status: player.status });
 		if (player.status === 'readyToPlay' && play) {
-			console.log('Reproduce el video cuando esté listo');
+			// console.log('Reproduce el video cuando esté listo');
 			player.play(); // Reproduce el video cuando esté listo
 		} else if (player.status === 'error') {
 			setError('Error al reproducir el video.');
@@ -43,7 +43,7 @@ const VideoCard = ({
 	const { isPlaying } = useEvent(player, 'playingChange', {
 		isPlaying: player.playing,
 	});
-	console.log({ isPlaying });
+	// console.log({ isPlaying });
 
 	return (
 		<View className="flex flex-col items-center px-4 mb-14">

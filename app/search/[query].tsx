@@ -14,7 +14,7 @@ export default function Search() {
 	const { data: posts, refetch } = useAppwrite(() =>
 		searchPosts(query.toString())
 	);
-	console.log({ query, posts });
+
 	useEffect(() => {
 		refetch();
 	}, [query]);

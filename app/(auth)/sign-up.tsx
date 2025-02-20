@@ -6,7 +6,7 @@ import { View, Text, ScrollView, Dimensions, Alert, Image } from 'react-native';
 import { images } from '@/constants';
 import CustomButton from '@/components/CustomButton';
 import FormField from '@/components/FormField';
-import { createUser, getCurrentUser } from '@/lib/appwrite';
+import { createUser } from '@/lib/appwrite';
 import { useGlobalContext } from '@/context/GlobalProvider';
 
 const SignUp = () => {
@@ -27,7 +27,7 @@ const SignUp = () => {
 
 		try {
 			const result = await createUser(form.email, form.password, form.userName);
-			// const result = await getCurrentUser();
+
 			setUser(result);
 			setIsLogged(true);
 

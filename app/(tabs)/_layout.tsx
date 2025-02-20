@@ -15,7 +15,7 @@ export default function TabsLayout() {
 		focused: boolean;
 	}) => {
 		return (
-			<View className="flex flex-col items-center justify-center gap-2 w-full">
+			<View className="flex flex-col items-center justify-center w-full">
 				<Image
 					source={icon}
 					resizeMode="contain"
@@ -46,8 +46,9 @@ export default function TabsLayout() {
 				tabBarStyle: {
 					backgroundColor: '#161622',
 					borderTopWidth: 1,
+					paddingTop: 8,
 					borderTopColor: '#232533',
-					height: 94,
+					height: 84,
 				},
 			}}
 		>
