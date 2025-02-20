@@ -6,10 +6,10 @@ import CustomButton from './CustomButton';
 
 const EmptyState = ({
 	title,
-	subtitle,
+	subtitle = '',
 }: {
 	title: string;
-	subtitle: string;
+	subtitle?: string;
 }) => {
 	return (
 		<View className="flex justify-center items-center px-4">

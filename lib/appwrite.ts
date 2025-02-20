@@ -122,7 +122,9 @@ export const getCurrentUser = async () => {
 // Get all video Posts
 export async function getAllPosts(): Promise<VideoData[]> {
 	try {
-		const posts = await databases.listDocuments(databaseId, videoCollectionId);
+		const posts = await databases.listDocuments(databaseId, videoCollectionId, [
+			Query.orderDesc('$createdAt'),
+		]);
 		// console.log({ docs: posts.documents });
 		return posts.documents as unknown as VideoData[];
 	} catch (error: any) {
@@ -161,6 +163,7 @@ export async function getUserPosts(userId: string): Promise<VideoData[]> {
 	try {
 		const posts = await databases.listDocuments(databaseId, videoCollectionId, [
 			Query.equal('users', userId),
+			Query.orderDesc('$createdAt'),
 		]);
 		return posts.documents as unknown as VideoData[];
 	} catch (error: any) {
@@ -213,8 +216,8 @@ export async function createVideoPost(form: {
 
 export interface VideoFile {
 	mimeType: string;
-	name: string;
-	size: number;
+	fileName: string;
+	fileSize: number;
 	uri: string;
 }
 
@@ -222,15 +225,16 @@ export interface VideoFile {
 export async function uploadFile(file: VideoFile, type: string) {
 	if (!file) return;
 
-	const { mimeType, name, size, uri } = file;
-	const asset = { type: mimeType, name, size, uri };
-
+	const { mimeType, fileName, fileSize, uri } = file;
+	const asset = { type: mimeType, name: fileName, size: fileSize, uri };
+	console.log({ file });
 	try {
 		const uploadedFile = await storage.createFile(
 			storageId,
 			ID.unique(),
 			asset
 		);
+		console.log({ uploadedFile });
 
 		const fileUrl = await getFilePreview(uploadedFile.$id, type);
 		return fileUrl;

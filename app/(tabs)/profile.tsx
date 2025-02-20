@@ -78,12 +78,7 @@ export default function Profile() {
 						</View>
 					</View>
 				)}
-				ListEmptyComponent={() => (
-					<EmptyState
-						title="No Videos Found"
-						subtitle="No videos found for this search query"
-					/>
-				)}
+				ListEmptyComponent={() => <EmptyState title="Upload a new video!" />}
 			/>
 		</SafeAreaView>
 	);

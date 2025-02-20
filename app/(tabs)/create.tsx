@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { router } from 'expo-router';
-import * as DocumentPicker from 'expo-document-picker';
+import * as ImagePicker from 'expo-image-picker';
 import { DocumentPickerAsset } from 'expo-document-picker';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {
@@ -66,11 +66,13 @@ const Create = () => {
 	});
 
 	const openPicker = async (selectType: string) => {
-		const result = await DocumentPicker.getDocumentAsync({
-			type:
+		const result = await ImagePicker.launchImageLibraryAsync({
+			mediaTypes:
 				selectType === 'image'
-					? ['image/png', 'image/jpg', 'image/jpeg']
-					: ['video/mp4', 'video/gif', 'video/mov'],
+					? ImagePicker.MediaTypeOptions.Images
+					: ImagePicker.MediaTypeOptions.Videos,
+			aspect: [4, 3],
+			quality: 1,
 		});
 
 		if (!result.canceled) {
