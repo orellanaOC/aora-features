@@ -179,8 +179,6 @@ export async function signOut() {
 	}
 }
 
-// import { uploadFile } from './uploadFile'; // Import the appropriate module
-
 // Create Video Post
 export async function createVideoPost(form: {
 	thumbnail: VideoFile;

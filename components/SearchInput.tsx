@@ -1,15 +1,7 @@
 import { useState } from 'react';
-import {
-	View,
-	Text,
-	TextInput,
-	TouchableOpacity,
-	Image,
-	Alert,
-} from 'react-native';
+import { View, TextInput, TouchableOpacity, Image, Alert } from 'react-native';
 import { router, usePathname } from 'expo-router';
 import { icons } from '../constants';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const SearchInput = ({ initialQuery = '' }: { initialQuery?: string }) => {
 	const pathname = usePathname();
