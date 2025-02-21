@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useEvent } from 'expo';
 
-import { icons } from '../constants';
+import { icons } from '@/presentation/constants';
 import { useVideoPlayer, VideoView } from 'expo-video';
 
 const VideoCard = ({

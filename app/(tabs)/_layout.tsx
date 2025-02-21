@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { Tabs, Redirect } from 'expo-router';
-import { icons } from '@/constants';
+import { icons } from '@/presentation/constants';
 
 export default function TabsLayout() {
 	const TabIcon = ({

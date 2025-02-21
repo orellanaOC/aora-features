@@ -5,10 +5,10 @@ import { router } from 'expo-router';
 import { useGlobalContext } from '@/context/GlobalProvider';
 import useAppwrite from '@/lib/useAppwrite';
 import { getUserPosts, signOut, VideoData } from '@/lib/appwrite';
-import VideoCard from '@/components/VideoCard';
-import { icons } from '@/constants';
-import InfoBox from '@/components/InfoBox';
-import EmptyState from '@/components/EmptyState';
+import VideoCard from '@/presentation/shared/components/VideoCard';
+import { icons } from '@/presentation/constants';
+import InfoBox from '@/presentation/shared/components/InfoBox';
+import EmptyState from '@/presentation/shared/components/EmptyState';
 
 const ProfileScreen = () => {
 	const { user, setUser, setIsLogged } = useGlobalContext();
@@ -24,7 +24,7 @@ const ProfileScreen = () => {
 			<FlatList
 				className="bg-primary"
 				data={posts}
-				keyExtractor={(item: VideoData) => item.id}
+				keyExtractor={(item: VideoData) => item.$id}
 				renderItem={({ item }) => (
 					<VideoCard
 						title={item.title}

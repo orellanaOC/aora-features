@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import { FlatList, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 
-import SearchInput from '@/components/SearchInput';
-import EmptyState from '@/components/EmptyState';
+import SearchInput from '@/presentation/shared/components/SearchInput';
+import EmptyState from '@/presentation/shared/components/EmptyState';
 import useAppwrite from '@/lib/useAppwrite';
-import VideoCard from '@/components/VideoCard';
+import VideoCard from '@/presentation/shared/components/VideoCard';
 import { searchPosts, VideoData } from '@/lib/appwrite';
 
 const SearchScreen = () => {

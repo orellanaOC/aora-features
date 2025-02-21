@@ -2,13 +2,13 @@ import { FlatList, Image, RefreshControl, Text, View } from 'react-native';
 import * as React from 'react';
 import { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { images } from '@/constants';
-import SearchInput from '@/components/SearchInput';
-import Trending from '@/components/Trending';
-import EmptyState from '@/components/EmptyState';
+import { images } from '@/presentation/constants';
+import SearchInput from '@/presentation/shared/components/SearchInput';
+import Trending from '@/presentation/shared/components/Trending';
+import EmptyState from '@/presentation/shared/components/EmptyState';
 import { getAllPosts, getLatestPosts, VideoData } from '@/lib/appwrite';
 import useAppwrite from '@/lib/useAppwrite';
-import VideoCard from '@/components/VideoCard';
+import VideoCard from '@/presentation/shared/components/VideoCard';
 import { useGlobalContext } from '@/context/GlobalProvider';
 
 const HomeScreen = () => {
@@ -40,7 +40,7 @@ const HomeScreen = () => {
 				)}
 				ListHeaderComponent={() => (
 					<View className="flex my-6 px-4 space-y-6">
-						<View className="flex justify-between items-start flex-row mb-6 border border-white ">
+						<View className="flex justify-between items-start flex-row mb-6">
 							<View>
 								<Text className="font-medium text-sm text-gray-100">
 									Welcome Back,

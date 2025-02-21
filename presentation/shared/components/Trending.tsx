@@ -13,7 +13,7 @@ import {
 	ViewToken,
 } from 'react-native';
 
-import { icons } from '../constants';
+import { icons } from '@/presentation/constants';
 import { VideoData } from '@/lib/appwrite';
 import { useEvent } from 'expo';
 

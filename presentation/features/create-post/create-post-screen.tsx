@@ -13,10 +13,10 @@ import {
 	StyleSheet,
 } from 'react-native';
 import { useVideoPlayer, VideoView, VideoSource } from 'expo-video';
-import { icons } from '@/constants';
+import { icons } from '@/presentation/constants';
 import { createVideoPost, VideoFile } from '@/lib/appwrite';
-import CustomButton from '@/components/CustomButton';
-import FormField from '@/components/FormField';
+import CustomButton from '@/presentation/shared/components/CustomButton';
+import FormField from '@/presentation/shared/components/FormField';
 import { useGlobalContext } from '@/context/GlobalProvider';
 import { useEventListener } from 'expo';
 
