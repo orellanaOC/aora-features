@@ -53,6 +53,21 @@ export default function TabsLayout() {
 			}}
 		>
 			<Tabs.Screen
+				name="image_ai"
+				options={{
+					title: 'Image AI analysis',
+					headerShown: false,
+					tabBarIcon: ({ color, focused }) => (
+						<TabIcon
+							icon={icons.bookmark}
+							color={color}
+							name="Image"
+							focused={focused}
+						/>
+					),
+				}}
+			/>
+			<Tabs.Screen
 				name="home"
 				options={{
 					title: 'Home',
@@ -62,21 +77,6 @@ export default function TabsLayout() {
 							icon={icons.home}
 							color={color}
 							name="Home"
-							focused={focused}
-						/>
-					),
-				}}
-			/>
-			<Tabs.Screen
-				name="bookmark"
-				options={{
-					title: 'Bookmark',
-					headerShown: false,
-					tabBarIcon: ({ color, focused }) => (
-						<TabIcon
-							icon={icons.bookmark}
-							color={color}
-							name="Bookmark"
 							focused={focused}
 						/>
 					),
