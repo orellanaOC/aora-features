@@ -10,6 +10,7 @@ import {
 	Image,
 	StyleSheet,
 } from 'react-native';
+import * as AppleAuthentication from 'expo-apple-authentication';
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import { useGoogleSignIn } from './hooks/use-google-signin';
 import { images } from '@/presentation/constants';
@@ -19,7 +20,7 @@ import { signIn, getCurrentUser } from '@/lib/appwrite';
 import { useGlobalContext } from '@/context/GlobalProvider';
 
 const SignInScreen = () => {
-	const { googleSignIn } = useGoogleSignIn();
+	const { googleSignIn, appleSignIn } = useGoogleSignIn();
 	const { setUser, setIsLogged } = useGlobalContext();
 	const [isSubmitting, setSubmitting] = useState(false);
 	const [form, setForm] = useState({
@@ -93,6 +94,19 @@ const SignInScreen = () => {
 						style={styles.googleButton}
 						size={GoogleSigninButton.Size.Wide}
 						color={GoogleSigninButton.Color.Dark}
+						onPress={googleSignIn}
+					/>
+
+					<Text className=" bg-white">Hello</Text>
+					<AppleAuthentication.AppleAuthenticationButton
+						buttonType={
+							AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN
+						}
+						buttonStyle={
+							AppleAuthentication.AppleAuthenticationButtonStyle.BLACK
+						}
+						cornerRadius={5}
+						style={styles.googleButton}
 						onPress={googleSignIn}
 					/>
 

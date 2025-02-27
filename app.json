@@ -11,7 +11,9 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.imagegeminifirestore.app",
-      "googleServicesFile": "./GoogleService-Info.plist"
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "usesAppleSignIn": true,
+      "appleTeamId": "785PC69466"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,6 +31,7 @@
     "plugins": [
       "expo-router",
       "@react-native-google-signin/google-signin",
+      "expo-apple-authentication",
       [
         "expo-build-properties",
         {
@@ -57,6 +60,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "2d7179f2-ac63-4977-8318-20bef95a3574"
+      }
     }
   }
 }

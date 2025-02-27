@@ -5,6 +5,7 @@ import {
 	isSuccessResponse,
 	statusCodes,
 } from '@react-native-google-signin/google-signin';
+import * as AppleAuthentication from 'expo-apple-authentication';
 import { useState } from 'react';
 import { useGlobalContext } from '@/context/GlobalProvider';
 
@@ -12,6 +13,34 @@ export const useGoogleSignIn = () => {
 	const router = useRouter();
 	const [error, setError] = useState<any>();
 	const { setUser, setIsLogged } = useGlobalContext();
+
+	const appleSignIn = async () => {
+		try {
+			const credential = await AppleAuthentication.signInAsync({
+				requestedScopes: [
+					AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
+					AppleAuthentication.AppleAuthenticationScope.EMAIL,
+				],
+			});
+			setUser(credential);
+			router.replace('/home');
+			setIsLogged(true);
+			console.log({ credential });
+			setError(undefined);
+			router.replace('/home');
+			// signed in
+		} catch (e: any) {
+			setError(error);
+			setIsLogged(false);
+			if (e.code === 'ERR_REQUEST_CANCELED') {
+				// handle that the user canceled the sign-in flow
+				console.log('Cancelado');
+			} else {
+				// handle other errors
+				console.error(e);
+			}
+		}
+	};
 
 	const googleSignIn = async () => {
 		console.log('signIn');
@@ -38,5 +67,5 @@ export const useGoogleSignIn = () => {
 		}
 	};
 
-	return { googleSignIn };
+	return { googleSignIn, appleSignIn };
 };
