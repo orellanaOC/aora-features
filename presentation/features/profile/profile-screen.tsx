@@ -9,12 +9,17 @@ import VideoCard from '@/presentation/shared/components/VideoCard';
 import { icons } from '@/presentation/constants';
 import InfoBox from '@/presentation/shared/components/InfoBox';
 import EmptyState from '@/presentation/shared/components/EmptyState';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 const ProfileScreen = () => {
 	const { user, setUser, setIsLogged } = useGlobalContext();
+	console.log({ user });
 	const { data: posts, refetch } = useAppwrite(() => getUserPosts(user.$id));
 	const logout = async () => {
-		await signOut();
+		console.log({ user });
+		GoogleSignin.revokeAccess();
+		GoogleSignin.signOut();
+
 		setUser(null);
 		setIsLogged(false);
 		router.replace('/sign-in');

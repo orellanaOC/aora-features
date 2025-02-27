@@ -3,10 +3,20 @@ import { SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 import '../global.css';
 import GlobalProvider from '@/context/GlobalProvider';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 SplashScreen.preventAutoHideAsync();
 
+const configureFirebase = () => {
+	GoogleSignin.configure({
+		webClientId:
+			'615201126390-kdft6vdp0sresikbenndbs961d7tlqq4.apps.googleusercontent.com',
+	});
+};
+
 const RootLAyout = () => {
+	configureFirebase();
+
 	const [fontsLoaded, error] = useFonts({
 		'Poppins-Black': require('@/presentation/assets/fonts/Poppins-Black.ttf'),
 		'Poppins-Bold': require('@/presentation/assets/fonts/Poppins-Bold.ttf'),

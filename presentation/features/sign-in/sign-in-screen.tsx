@@ -1,8 +1,17 @@
 import { useState } from 'react';
 import { Link, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { View, Text, ScrollView, Dimensions, Alert, Image } from 'react-native';
-
+import {
+	View,
+	Text,
+	ScrollView,
+	Dimensions,
+	Alert,
+	Image,
+	StyleSheet,
+} from 'react-native';
+import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
+import { useGoogleSignIn } from './hooks/use-google-signin';
 import { images } from '@/presentation/constants';
 import CustomButton from '@/presentation/shared/components/CustomButton';
 import FormField from '@/presentation/shared/components/FormField';
@@ -10,6 +19,7 @@ import { signIn, getCurrentUser } from '@/lib/appwrite';
 import { useGlobalContext } from '@/context/GlobalProvider';
 
 const SignInScreen = () => {
+	const { googleSignIn } = useGoogleSignIn();
 	const { setUser, setIsLogged } = useGlobalContext();
 	const [isSubmitting, setSubmitting] = useState(false);
 	const [form, setForm] = useState({
@@ -79,6 +89,13 @@ const SignInScreen = () => {
 						isLoading={isSubmitting}
 					/>
 
+					<GoogleSigninButton
+						style={styles.googleButton}
+						size={GoogleSigninButton.Size.Wide}
+						color={GoogleSigninButton.Color.Dark}
+						onPress={googleSignIn}
+					/>
+
 					<View className="flex justify-center pt-5 flex-row gap-2">
 						<Text className="text-lg text-gray-100 font-regular">
 							Don't have an account?
@@ -98,3 +115,10 @@ const SignInScreen = () => {
 };
 
 export default SignInScreen;
+
+const styles = StyleSheet.create({
+	googleButton: {
+		width: '100%',
+		marginTop: 16,
+	},
+});

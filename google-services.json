@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "615201126390",
+    "project_id": "image-ai-tester",
+    "storage_bucket": "image-ai-tester.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615201126390:android:269ee112cbbe6d59dab9d7",
+        "android_client_info": {
+          "package_name": "com.imagegeminifirestore.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615201126390-a357vhovikm3dn9lus6mfvitmgnbico1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imagegeminifirestore.app",
+            "certificate_hash": "d6080091fbfac5e2b602baf66488c689ad6e4bc8"
+          }
+        },
+        {
+          "client_id": "615201126390-kdft6vdp0sresikbenndbs961d7tlqq4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJUBngUOlU6eR5D7bYkbD_aWy7mmc_BNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615201126390-kdft6vdp0sresikbenndbs961d7tlqq4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "615201126390-ec9bfphtegiil04mf7pnngbkc9p77sp1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.imagegeminifirestore.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
