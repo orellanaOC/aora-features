@@ -1,48 +1,48 @@
 {
   "project_info": {
-    "project_number": "615201126390",
-    "project_id": "image-ai-tester",
-    "storage_bucket": "image-ai-tester.firebasestorage.app"
+    "project_number": "1092567055062",
+    "project_id": "umbrella-poc",
+    "storage_bucket": "umbrella-poc.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:615201126390:android:269ee112cbbe6d59dab9d7",
+        "mobilesdk_app_id": "1:1092567055062:android:8e06072a2a5f47ddd92777",
         "android_client_info": {
-          "package_name": "com.imagegeminifirestore.app"
+          "package_name": "com.umbrellageminifirestore.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "615201126390-a357vhovikm3dn9lus6mfvitmgnbico1.apps.googleusercontent.com",
+          "client_id": "1092567055062-2fg7qovcjfllvl11fg754lue2amh46mp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.imagegeminifirestore.app",
+            "package_name": "com.umbrellageminifirestore.app",
             "certificate_hash": "d6080091fbfac5e2b602baf66488c689ad6e4bc8"
           }
         },
         {
-          "client_id": "615201126390-kdft6vdp0sresikbenndbs961d7tlqq4.apps.googleusercontent.com",
+          "client_id": "1092567055062-ikudnobaiv012jm80i5updjd4nobin1d.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDJUBngUOlU6eR5D7bYkbD_aWy7mmc_BNY"
+          "current_key": "AIzaSyDSig5gvLcMU4Xv93RDoPUZD2nxldJGibA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "615201126390-kdft6vdp0sresikbenndbs961d7tlqq4.apps.googleusercontent.com",
+              "client_id": "1092567055062-ikudnobaiv012jm80i5updjd4nobin1d.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "615201126390-ec9bfphtegiil04mf7pnngbkc9p77sp1.apps.googleusercontent.com",
+              "client_id": "1092567055062-fig55soatfqvkioljhd469e63uj4athk.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.imagegeminifirestore.app"
+                "bundle_id": "com.umbrellageminifirestore.app"
               }
             }
           ]

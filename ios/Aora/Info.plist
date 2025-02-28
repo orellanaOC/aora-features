@@ -30,13 +30,19 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>aora</string>
-          <string>com.imagegeminifirestore.app</string>
+          <string>com.umbrellageminifirestore.app</string>
         </array>
       </dict>
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>com.googleusercontent.apps.615201126390-ec9bfphtegiil04mf7pnngbkc9p77sp1</string>
+          <string>com.googleusercontent.apps.1092567055062-fig55soatfqvkioljhd469e63uj4athk</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>exp+aora</string>
         </array>
       </dict>
     </array>

@@ -86,9 +86,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.imagegeminifirestore.app'
+    namespace 'com.umbrellageminifirestore.app'
     defaultConfig {
-        applicationId 'com.imagegeminifirestore.app'
+        applicationId 'com.umbrellageminifirestore.app'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

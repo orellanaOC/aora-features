@@ -26,7 +26,8 @@
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="aora"/>
-        <data android:scheme="com.imagegeminifirestore.app"/>
+        <data android:scheme="com.umbrellageminifirestore.app"/>
+        <data android:scheme="exp+aora"/>
       </intent-filter>
     </activity>
   </application>

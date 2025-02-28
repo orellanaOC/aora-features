@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>615201126390-ec9bfphtegiil04mf7pnngbkc9p77sp1.apps.googleusercontent.com</string>
+	<string>1092567055062-fig55soatfqvkioljhd469e63uj4athk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.615201126390-ec9bfphtegiil04mf7pnngbkc9p77sp1</string>
+	<string>com.googleusercontent.apps.1092567055062-fig55soatfqvkioljhd469e63uj4athk</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>615201126390-a357vhovikm3dn9lus6mfvitmgnbico1.apps.googleusercontent.com</string>
+	<string>1092567055062-2fg7qovcjfllvl11fg754lue2amh46mp.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAgRXyMuwQBYihXJLmRAKJk4PKl9BlLbow</string>
+	<string>AIzaSyCKRLeMuBiRluidRV1bNK8G9J83JFFgZCs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>615201126390</string>
+	<string>1092567055062</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.imagegeminifirestore.app</string>
+	<string>com.umbrellageminifirestore.app</string>
 	<key>PROJECT_ID</key>
-	<string>image-ai-tester</string>
+	<string>umbrella-poc</string>
 	<key>STORAGE_BUCKET</key>
-	<string>image-ai-tester.firebasestorage.app</string>
+	<string>umbrella-poc.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:615201126390:ios:8a3a55f6c29801a8dab9d7</string>
+	<string>1:1092567055062:ios:10b31c929f7771bbd92777</string>
 </dict>
 </plist>

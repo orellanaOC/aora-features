@@ -1,4 +1,4 @@
-package com.imagegeminifirestore.app
+package com.umbrellageminifirestore.app
 
 import android.app.Application
 import android.content.res.Configuration

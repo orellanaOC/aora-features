@@ -1,4 +1,4 @@
-package com.imagegeminifirestore.app
+package com.umbrellageminifirestore.app
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build
